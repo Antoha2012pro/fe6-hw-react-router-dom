@@ -1,8 +1,21 @@
-import React from "react";
-import "./App.css";
+import React from 'react'
+import { NavLink, Outlet } from 'react-router'
 
 const App = () => {
-  return <div></div>;
-};
+  return (
+    <div>
+      asd
+      <header>
+        <nav>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/movies">Movies</NavLink>
+        </nav>
+      </header>
+      <main>
+        <Outlet />
+      </main>
+    </div>
+  )
+}
 
-export default App;
+export default App
