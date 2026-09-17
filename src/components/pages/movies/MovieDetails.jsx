@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, useParams } from "react-router";
+import { Link, Outlet, useParams } from "react-router";
 import { getDetails, getImageUrl } from "../../../shared/api/tmdbAPI";
 
 const MovieDetails = () => {
@@ -47,8 +47,8 @@ const MovieDetails = () => {
         <div className="py-4 border-b border-gray-400">
             <h3>Additional information</h3>
             <ol>
-                <li><a href={`/movies/${movieId}/cast`}>Cast</a></li>
-                <li><a href={`/movies/${movieId}/reviews`}>Reviews</a></li>
+                <li><Link to={`/movies/${movieId}/cast`}>Cast</Link></li>
+                <li><Link to={`/movies/${movieId}/reviews`}>Reviews</Link></li>
             </ol>
         </div>
         <div className="py-4">
