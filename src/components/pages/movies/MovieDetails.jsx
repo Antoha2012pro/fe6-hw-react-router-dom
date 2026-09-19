@@ -6,10 +6,15 @@ import Skeleton from "../../ui/Skeleton";
 
 const MovieDetails = () => {
   const { movieId } = useParams();
+
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    getDetails(movieId).then(setMovie).catch(console.error);
+    getDetails(movieId)
+      .then(
+        setMovie
+      )
+      .catch(console.error);
   }, [movieId]);
 
   return (
@@ -18,7 +23,7 @@ const MovieDetails = () => {
         <Link to="/" className="active:bg-cyan-200 mr-auto">
           Go back
         </Link>
-        <div className="flex gap-3">
+        <div className="flex flex-col md:flex-row gap-3">
           {!movie ? (
             <>
               <Skeleton className="w-50 h-[300px] rounded" />
